@@ -37,8 +37,8 @@ function generateMenuItems(arr) {
     const items = arr.map(item => itemTemplate(item)).join('');
     menuRef.insertAdjacentHTML('beforeend', items);
   }
-  const startCreateMenu = () => {
+  const createMenu = () => {
     generateMenuItems(menu);
   };
 
-  window.addEventListener('load', startCreateMenu);
+  window.addEventListener('load', createMenu);

@@ -10,6 +10,14 @@ const Theme = {
     DARK: 'dark-theme',
 };
 
+function generateMenuItems(arr) {
+  const items = arr.map(item => itemsTemplate(item)).join('');
+  menuRef.insertAdjacentHTML('beforeend', items);
+}
+const createMenu = () => {
+  generateMenuItems(menu);
+};
+
 if (localStorage.getItem('Theme') === Theme.DARK) {
     document.body.classList.add(Theme.DARK);
     switchThemeRef.checked = true;
@@ -33,12 +41,6 @@ if (localStorage.getItem('Theme') === Theme.DARK) {
   
   switchThemeRef.addEventListener('change', setTheme);
 
-function generateMenuItems(arr) {
-    const items = arr.map(item => itemsTemplate(item)).join('');
-    menuRef.insertAdjacentHTML('beforeend', items);
-  }
-  const createMenu = () => {
-    generateMenuItems(menu);
-  };
+
 
   window.addEventListener('load', createMenu);

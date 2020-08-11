@@ -34,7 +34,7 @@ if (localStorage.getItem('Theme') === Theme.DARK) {
   switchThemeRef.addEventListener('change', setTheme);
 
 function generateMenuItems(arr) {
-    const items = arr.map(item => itemTemplate(item)).join('');
+    const items = arr.map(item => itemsTemplate(item)).join('');
     menuRef.insertAdjacentHTML('beforeend', items);
   }
   const createMenu = () => {

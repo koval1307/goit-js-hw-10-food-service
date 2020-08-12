@@ -35,7 +35,7 @@ if (localStorage.getItem('Theme') === Theme.DARK) {
 
   const setTheme = event => {
     if (event.target.checked) {
-   setLightTheme
+   setLightTheme()
     } else {
     setDarkTheme()
     }

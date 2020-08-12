@@ -24,23 +24,23 @@ if (localStorage.getItem('Theme') === Theme.DARK) {
   } else {
     document.body.classList.add(Theme.LIGHT);
   }
+  const setDarkTheme = function(){
+    localStorage.setItem('Theme', Theme.LIGHT);
+    document.body.classList.remove(Theme.DARK);
+    document.body.classList.add(Theme.LIGHT);
+  };
+  const setLightTheme = function(){localStorage.setItem('Theme', Theme.DARK);
+  document.body.classList.add(Theme.DARK);
+  document.body.classList.remove(Theme.LIGHT);}
 
   const setTheme = event => {
     if (event.target.checked) {
-      switchThemeRef.checked = true;
-      localStorage.setItem('Theme', Theme.DARK);
-      document.body.classList.add(Theme.DARK);
-      document.body.classList.remove(Theme.LIGHT);
+   setLightTheme
     } else {
-      switchThemeRef.checked = false;
-      localStorage.setItem('Theme', Theme.LIGHT);
-      document.body.classList.remove(Theme.DARK);
-      document.body.classList.add(Theme.LIGHT);
+    setDarkTheme()
     }
   };
   
   switchThemeRef.addEventListener('change', setTheme);
-
-
 
   window.addEventListener('load', createMenu);
